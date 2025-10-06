@@ -22,6 +22,7 @@ import com.google.gerrit.extensions.api.access.GlobalOrPluginPermission;
 import com.google.gerrit.extensions.conditions.BooleanCondition;
 import com.google.gerrit.extensions.restapi.AuthException;
 import com.google.gerrit.server.CurrentUser;
+import com.google.gerrit.server.IdentifiedUser;
 import com.google.gerrit.server.permissions.DefaultPermissionBackend;
 import com.google.gerrit.server.permissions.PermissionBackend.ForProject;
 import com.google.gerrit.server.permissions.PermissionBackend.WithUser;
@@ -62,6 +63,14 @@ public class WithVirtualHostUser extends WithUser {
     }
 
     return ForHiddenProject.INSTANCE;
+  }
+
+  public WithUser exactUser() {
+    return defaultPermissionBackend.exactUser(user);
+  }
+
+  public WithUser user(IdentifiedUser.ImpersonationPermissionMode permissionMode) {
+    return defaultPermissionBackend.user(user, permissionMode);
   }
 
   private String[] getVisibleProjects() {

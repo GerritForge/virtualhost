@@ -55,6 +55,17 @@ public class VirtualHostPermissionBackend extends PermissionBackend {
   }
 
   @Override
+  public WithUser user(
+      CurrentUser user, IdentifiedUser.ImpersonationPermissionMode permissionMode) {
+    return virtualDomainUserFactory.get(user).user(permissionMode);
+  }
+
+  @Override
+  public WithUser exactUser(CurrentUser user) {
+    return virtualDomainUserFactory.get(currentUser.get()).exactUser();
+  }
+
+  @Override
   public WithUser currentUser() {
     return virtualDomainUserFactory.get(currentUser.get());
   }
