@@ -14,9 +14,9 @@
 
 package com.gerritforge.gerrit.modules.virtualhost;
 
+import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.util.Optional;
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -24,8 +24,6 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-
-import com.google.common.annotations.VisibleForTesting;
 
 public class VirtualHostFilter implements Filter {
   static final String FORWARDED_HOST_HEADER = "X-FORWARDED-HOST";

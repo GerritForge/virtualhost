@@ -82,7 +82,8 @@ public class VirtualHostHttpCanonicalWebUrlProvider extends HttpCanonicalWebUrlP
       return provider.get().getServerName();
     } catch (ProvisionException e) {
       logger.atWarning().withCause(e).log(
-          "Unable to determine the virtual-host servername: current thread is out of an HTTP request scope or outside a call stack coming from a GuiceServlet filter");
+          "Unable to determine the virtual-host servername: current thread is out of an HTTP"
+              + " request scope or outside a call stack coming from a GuiceServlet filter");
     }
 
     return null;

@@ -19,11 +19,9 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.junit.Test;
-
 import com.google.gerrit.common.Nullable;
+import javax.servlet.http.HttpServletRequest;
+import org.junit.Test;
 
 public class VirutalHostFilterTest {
   private static final String DOM0_HOST = "review.gerrithub.io";
