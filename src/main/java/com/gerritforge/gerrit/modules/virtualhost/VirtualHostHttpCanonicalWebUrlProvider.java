@@ -71,10 +71,14 @@ public class VirtualHostHttpCanonicalWebUrlProvider extends HttpCanonicalWebUrlP
   @Nullable
   private static String extractServerNameWhenInScope(Provider<HttpServletRequest> provider) {
     String currentThreadName = Thread.currentThread().getName();
-    // SSH threads and associated delegate (e.g. ReceiveCommits-*-for-SSH) and SendMail would
-    // never have an incoming HTTP servlet request context, therefore avoid to invoke Guice as
-    // it would surely result in a ProvisionException
-    if (currentThreadName.contains("SSH") || currentThreadName.contains("SendEmail")) {
+    // SSH threads and associated delegate (e.g. ReceiveCommits-*-for-SSH), SendMail, event
+    // subscribers and replication would never have an incoming HTTP servlet request context,
+    // therefore avoid to invoke Guice as it would surely result in a ProvisionException
+    if (currentThreadName.contains("SSH")
+        || currentThreadName.contains("SendEmail")
+        || currentThreadName.contains("subscriber")
+        || currentThreadName.contains("Replicate")
+        || currentThreadName.contains("Scheduling")) {
       return null;
     }
 
