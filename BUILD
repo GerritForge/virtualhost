@@ -6,7 +6,7 @@ gerrit_plugin(
     srcs = glob(["src/main/java/**/*.java"]),
     manifest_entries = [
         "Implementation-Title: Gerrit Virtual Host lib module",
-        "Implementation-URL: https://gerrit.googlesource.com/modules/virtualhost",
+        "Implementation-URL: https://github.com/GerritForge/virtualhost",
     ],
     resources = glob(["src/main/resources/**/*"]),
 )
