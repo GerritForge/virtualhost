@@ -7,8 +7,10 @@ gerrit_plugin(
     manifest_entries = [
         "Implementation-Title: Gerrit Virtual Host lib module",
         "Implementation-URL: https://github.com/GerritForge/virtualhost",
+        "Gerrit-HttpModule: com.gerritforge.gerrit.plugins.bsl.HttpModule",
     ],
     resources = glob(["src/main/resources/**/*"]),
+    deps = ["//plugins/gerrit-bsl-license"],
 )
 
 junit_tests(
