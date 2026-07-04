@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1a94ec9_5b163218",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-07-04T00:06:37Z",
+      "side": 1,
+      "message": "The plugin strategy for BSL awareness won\u0027t work with libModules.",
+      "revId": "fbf8fa799253c28fb21f230c3ab2b1ecd55d83ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
