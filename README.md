@@ -23,6 +23,8 @@ Build this module as it was a Gerrit plugin:
 - Clone Gerrit source tree
 - Clone the virtualhost source tree
 - Link the ```virtualhost``` directory to Gerrit ```/plugins/virtualhost```
+- Clone the [gerrit-bsl-license](https://github.com/GerritForge/gerrit-bsl-license) source tree
+  and link it to Gerrit ```/plugins/gerrit-bsl-license```
 - From Gerrit source tree run ```bazel build plugins/virtualhost```
 - The ```virtualhost.jar``` module is generated under ```/bazel-genfiles/plugins/virtualhost/```
 

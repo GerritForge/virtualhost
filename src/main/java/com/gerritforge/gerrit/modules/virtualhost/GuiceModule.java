@@ -14,6 +14,7 @@
 
 package com.gerritforge.gerrit.modules.virtualhost;
 
+import com.gerritforge.gerrit.plugins.bsl.WebLoginListenerLibModule;
 import com.google.gerrit.httpd.HttpCanonicalWebUrlProvider;
 import com.google.gerrit.server.permissions.PermissionBackend;
 import com.google.inject.AbstractModule;
@@ -31,5 +32,6 @@ public class GuiceModule extends AbstractModule {
 
     bind(PermissionBackend.class).to(VirtualHostPermissionBackend.class).in(Scopes.SINGLETON);
     bind(HttpCanonicalWebUrlProvider.class).to(VirtualHostHttpCanonicalWebUrlProvider.class);
+    install(WebLoginListenerLibModule.sysModule("virtualhost"));
   }
 }
