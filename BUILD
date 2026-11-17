@@ -9,6 +9,7 @@ gerrit_plugin(
         "Implementation-URL: https://github.com/GerritForge/virtualhost",
     ],
     resources = glob(["src/main/resources/**/*"]),
+    deps = ["//plugins/gerrit-bsl-license"],
 )
 
 junit_tests(
